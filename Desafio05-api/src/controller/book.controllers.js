@@ -35,7 +35,7 @@ async function updateBookController(req, res) {
     const bookId = req.params.id;
     try {
         const response = await bookService.updateBookService(updatedBook, bookId);
-        res.status(200).send(response);
+        res.status(200).send({ mensagem: "Livro atualizado com sucesso!" });
     } catch (error) {
         res.status(400).send({ message: error.message })
     }
@@ -45,7 +45,7 @@ async function deleteBookController(req, res) {
     const bookId = req.params.id;
     try {
         const response = await bookService.deleteBookService(bookId);
-        res.status(200).send(response);
+        res.status(200).send({ mensagem: "Livro deletado com sucesso!" });
     } catch (error) {
         res.status(400).send({ message: error.message })
     }
